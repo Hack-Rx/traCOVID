@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1048854474469",
+    "firebase_url": "https://tracovid-aa15a.firebaseio.com",
+    "project_id": "tracovid-aa15a",
+    "storage_bucket": "tracovid-aa15a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1048854474469:android:defbeb08ca82a6c62eae0c",
+        "android_client_info": {
+          "package_name": "com.tanmaya.tracovid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1048854474469-1j2bb90ik416q68semme7f5oceebue3o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tanmaya.tracovid",
+            "certificate_hash": "0249f8c9271729499d5036f9e15f1a29149bcf7b"
+          }
+        },
+        {
+          "client_id": "1048854474469-4r47dlnt2958l74t3og4amerln0g91k7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBvU9xFAwKEUMEZqnvEfAHUKAKTVP0aMF0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1048854474469-4r47dlnt2958l74t3og4amerln0g91k7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
