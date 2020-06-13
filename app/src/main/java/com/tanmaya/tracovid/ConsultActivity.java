@@ -2,39 +2,27 @@ package com.tanmaya.tracovid;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import cdflynn.android.library.checkview.CheckView;
+public class ConsultActivity extends AppCompatActivity {
+    Button NavHome,NavDiag,NavIns,NavCB;
 
-public class SucessActivity extends AppCompatActivity {
-   CheckView mCheckView;
-   Button NavHome,NavDiag,NavIns,NavCB,NavConsult;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sucess);
+        setContentView(R.layout.activity_consult);
         NavCB=findViewById(R.id.button8);
         NavIns=findViewById(R.id.button11);
         NavDiag=findViewById(R.id.button10);
         NavHome=findViewById(R.id.button7);
-        NavConsult=findViewById(R.id.button9);
-        mCheckView=findViewById(R.id.check);
-        mCheckView.check();
-        NavConsult.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(SucessActivity.this,ConsultActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        });
         NavDiag.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(SucessActivity.this,SymptomLogger.class);
+                Intent intent = new Intent(ConsultActivity.this,SymptomLogger.class);
                 startActivity(intent);
                 finish();
             }
@@ -42,7 +30,7 @@ public class SucessActivity extends AppCompatActivity {
         NavCB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(SucessActivity.this,ChatBotActivity.class);
+                Intent intent = new Intent(ConsultActivity.this,ChatBotActivity.class);
                 startActivity(intent);
                 finish();
             }
@@ -50,7 +38,7 @@ public class SucessActivity extends AppCompatActivity {
         NavIns.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(SucessActivity.this,InsureActivity.class);
+                Intent intent = new Intent(ConsultActivity.this,InsureActivity.class);
                 startActivity(intent);
                 finish();
             }
@@ -58,7 +46,7 @@ public class SucessActivity extends AppCompatActivity {
         NavHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(SucessActivity.this,HomeActivity.class);
+                Intent intent = new Intent(ConsultActivity.this,HomeActivity.class);
                 startActivity(intent);
                 finish();
             }

@@ -9,7 +9,7 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class HomeActivity extends AppCompatActivity {
-    Button CB,NavCB,LS,FAQ,Zones,NavIns,Ins,NavDiag;
+    Button CB,NavCB,LS,FAQ,Zones,NavIns,Ins,NavDiag,NavConsult;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,6 +21,7 @@ public class HomeActivity extends AppCompatActivity {
         LS=findViewById(R.id.button3);
         NavIns=findViewById(R.id.button11);
         NavDiag=findViewById(R.id.button10);
+        NavConsult=findViewById(R.id.button9);
         Ins=findViewById(R.id.button5);
         CB.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -82,6 +83,14 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(HomeActivity.this,SymptomLogger.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+        NavConsult.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomeActivity.this,ConsultActivity.class);
                 startActivity(intent);
                 finish();
             }

@@ -13,7 +13,7 @@ import android.widget.Button;
 
 public class ChatBotActivity extends AppCompatActivity {
     WebView webView;
-   Button NavHome,NavIns,NavDiag;
+   Button NavHome,NavIns,NavDiag,NavConsult;
     @SuppressLint("SetJavaScriptEnabled")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,9 +23,18 @@ public class ChatBotActivity extends AppCompatActivity {
         NavIns=findViewById(R.id.button11);
         NavDiag=findViewById(R.id.button10);
         webView=findViewById(R.id.webview);
+        NavConsult=findViewById(R.id.button9);
         webView.getSettings().setBuiltInZoomControls(true);
         webView.getSettings().setJavaScriptEnabled(true);
         webView.getSettings().setDomStorageEnabled(true);
+        NavConsult.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ChatBotActivity.this,ConsultActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
         NavDiag.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

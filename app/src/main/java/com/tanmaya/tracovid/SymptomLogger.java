@@ -3,6 +3,7 @@ package com.tanmaya.tracovid;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -30,7 +31,7 @@ public class SymptomLogger extends AppCompatActivity implements AdapterView.OnIt
     FirebaseDatabase database;
     DatabaseReference ref;
     private EditText patientName,symptomname;
-    Button submit,NavHome,NavCB,NavIns;
+    Button submit,NavHome,NavCB,NavIns,NavConsult;
     SeekBar seek_bar;
     TextView tv1;
     Spinner mySpinner,Spinner2;
@@ -48,6 +49,7 @@ public class SymptomLogger extends AppCompatActivity implements AdapterView.OnIt
         NavHome=findViewById(R.id.button7);
         NavCB=findViewById(R.id.button8);
         NavIns=findViewById(R.id.button11);
+        NavConsult=findViewById(R.id.button9);
         patientName=findViewById(R.id.pat_name);
         symptomname=findViewById(R.id.sym_name);
         symptom = new Symptom();
@@ -91,6 +93,14 @@ public class SymptomLogger extends AppCompatActivity implements AdapterView.OnIt
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(SymptomLogger.this,HomeActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+        NavConsult.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SymptomLogger.this,ConsultActivity.class);
                 startActivity(intent);
                 finish();
             }

@@ -1,5 +1,6 @@
 package com.tanmaya.tracovid;
 
+import android.app.Activity;
 import android.content.ActivityNotFoundException;
 import android.content.ComponentName;
 import android.content.Intent;
@@ -12,7 +13,7 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class InsureActivity extends AppCompatActivity {
-    Button NavHome,NavCB,NavDiag,OC;
+    Button NavHome,NavCB,NavDiag,OC,NavConsult;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,6 +22,7 @@ public class InsureActivity extends AppCompatActivity {
         NavCB=findViewById(R.id.button8);
         NavDiag=findViewById(R.id.button10);
         OC=findViewById(R.id.button3);
+        NavConsult=findViewById(R.id.button9);
         NavCB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -41,6 +43,14 @@ public class InsureActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(InsureActivity.this,SymptomLogger.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+        NavConsult.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(InsureActivity.this,ConsultActivity.class);
                 startActivity(intent);
                 finish();
             }
