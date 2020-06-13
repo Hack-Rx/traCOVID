@@ -11,17 +11,35 @@ import android.widget.Button;
 
 public class FAQActivity extends AppCompatActivity {
     WebView webView;
-    Button NavHome,NavCB;
+    Button NavHome,NavCB,NavDiag,NavIns;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_f_a_q);
         NavHome=findViewById(R.id.button7);
         NavCB=findViewById(R.id.button8);
+        NavDiag=findViewById(R.id.button10);
+        NavIns=findViewById(R.id.button11);
         webView=findViewById(R.id.webview);
         webView.getSettings().setBuiltInZoomControls(true);
         webView.getSettings().setJavaScriptEnabled(true);
         webView.getSettings().setDomStorageEnabled(true);
+        NavDiag.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(FAQActivity.this,SymptomLogger.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+        NavIns.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(FAQActivity.this,InsureActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
         NavCB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
