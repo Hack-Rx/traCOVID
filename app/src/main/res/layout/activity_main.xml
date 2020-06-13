@@ -20,7 +20,7 @@
             android:layout_height="150dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginBottom="24dp"
-            android:src="@drawable/applogo" />
+            android:src="@drawable/splash" />
 
         <!-- Email Label -->
         <com.google.android.material.textfield.TextInputLayout
@@ -29,7 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
-            android:textColorHint="@color/colorPrimary"
+            android:textColorHint="@color/appTheme"
             app:boxStrokeColor="@color/colorPrimaryDark"
             app:placeholderTextColor="@color/darkblue">
 
@@ -50,7 +50,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
-            android:textColorHint="@color/colorPrimary"
+            android:textColorHint="@color/appTheme"
             app:boxStrokeColor="@color/colorPrimaryDark"
             app:placeholderTextColor="@color/darkblue">
 
@@ -70,8 +70,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:layout_marginBottom="24dp"
-            android:background="#5D0874"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/rounded_button"
             android:padding="12dp"
             android:text="Login"
             android:textColor="@color/backgroundcolor" />
@@ -81,9 +81,9 @@
             style="@android:style/Widget.Holo.Light.Button.Toggle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="12dp"
             android:layout_marginBottom="24dp"
-            android:background="#5D0874"
+            android:background="@drawable/rounded_button"
             android:padding="12dp"
             android:text="Register"
             android:textColor="@color/backgroundcolor"
