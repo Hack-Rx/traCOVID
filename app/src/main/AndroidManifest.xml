@@ -18,7 +18,7 @@
         android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SucessActivity"></activity>
+        <activity android:name=".SucessActivity" android:screenOrientation="portrait"/>
         <activity
             android:name=".FAQActivity"
             android:screenOrientation="portrait" />

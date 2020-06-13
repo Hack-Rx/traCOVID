@@ -107,6 +107,9 @@ public class SymptomLogger extends AppCompatActivity implements AdapterView.OnIt
                 symptom.setTemp(record);
                 symptom.setba(breathe);
                 ref.child(String.valueOf(maxid+1)).setValue(symptom);
+                Intent intent = new Intent(SymptomLogger.this,SucessActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
 
