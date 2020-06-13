@@ -220,7 +220,7 @@
         android:id="@+id/button10"
         android:layout_width="44dp"
         android:layout_height="26.13dp"
-        android:background="@drawable/diag_d"
+        android:background="@drawable/diag_a"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.694"

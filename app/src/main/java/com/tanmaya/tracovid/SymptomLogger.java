@@ -30,7 +30,7 @@ public class SymptomLogger extends AppCompatActivity implements AdapterView.OnIt
     FirebaseDatabase database;
     DatabaseReference ref;
     private EditText patientName,symptomname;
-    Button submit,NavHome,NavCB;
+    Button submit,NavHome,NavCB,NavIns;
     SeekBar seek_bar;
     TextView tv1;
     Spinner mySpinner,Spinner2;
@@ -47,6 +47,7 @@ public class SymptomLogger extends AppCompatActivity implements AdapterView.OnIt
         submit=findViewById(R.id.submit);
         NavHome=findViewById(R.id.button7);
         NavCB=findViewById(R.id.button8);
+        NavIns=findViewById(R.id.button11);
         patientName=findViewById(R.id.pat_name);
         symptomname=findViewById(R.id.sym_name);
         symptom = new Symptom();
@@ -74,6 +75,14 @@ public class SymptomLogger extends AppCompatActivity implements AdapterView.OnIt
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(SymptomLogger.this,ChatBotActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+        NavIns.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SymptomLogger.this,InsureActivity.class);
                 startActivity(intent);
                 finish();
             }

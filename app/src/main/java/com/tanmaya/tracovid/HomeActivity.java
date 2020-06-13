@@ -9,7 +9,7 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class HomeActivity extends AppCompatActivity {
-    Button CB,NavCB,LS,FAQ,Zones;
+    Button CB,NavCB,LS,FAQ,Zones,NavIns,Ins,NavDiag;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,6 +19,9 @@ public class HomeActivity extends AppCompatActivity {
         CB=findViewById(R.id.button6);
         NavCB=findViewById(R.id.button8);
         LS=findViewById(R.id.button3);
+        NavIns=findViewById(R.id.button11);
+        NavDiag=findViewById(R.id.button10);
+        Ins=findViewById(R.id.button5);
         CB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -55,6 +58,30 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(HomeActivity.this,FAQActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+        NavIns.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomeActivity.this,InsureActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+        Ins.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomeActivity.this,InsureActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+        NavDiag.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomeActivity.this,SymptomLogger.class);
                 startActivity(intent);
                 finish();
             }
