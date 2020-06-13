@@ -22,21 +22,21 @@ public class Symptom {
         return welness;
     }
 
-    public void setWelness(String phone) {
+    public void setWelness(String welness) {
         this.welness = welness;
     }
     public String getba() {
         return ba;
     }
 
-    public void setba(String phone) {
+    public void setba(String ba) {
         this.ba = ba;
     }
     public String getTemp() {
         return temp;
     }
 
-    public void setTemp(String phone) {
+    public void setTemp(String temp) {
         this.temp =temp;
     }
 
