@@ -15,16 +15,34 @@
         android:icon="@mipmap/applogo"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/applogo_round"
+        android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".FAQActivity"></activity>
-        <activity android:name=".ZonesActivity" />
-        <activity android:name=".SymptomLogger" />
-        <activity android:name=".ChatBotActivity" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".HomeActivity" />
-        <activity android:name=".InsureActivity" />
-        <activity android:name=".SplashScreen">
+        <activity android:name=".SucessActivity"></activity>
+        <activity
+            android:name=".FAQActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ZonesActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SymptomLogger"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ChatBotActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".HomeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".InsureActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SplashScreen"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
