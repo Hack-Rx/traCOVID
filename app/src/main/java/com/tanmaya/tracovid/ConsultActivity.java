@@ -51,5 +51,6 @@ public class ConsultActivity extends AppCompatActivity {
                 finish();
             }
         });
+        
     }
 }
