@@ -17,7 +17,9 @@
         android:roundIcon="@mipmap/applogo_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SymptomLogger"></activity>
+        <activity android:name=".FAQActivity"></activity>
+        <activity android:name=".ZonesActivity" />
+        <activity android:name=".SymptomLogger" />
         <activity android:name=".ChatBotActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".HomeActivity" />

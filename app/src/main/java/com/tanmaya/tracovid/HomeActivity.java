@@ -9,11 +9,13 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class HomeActivity extends AppCompatActivity {
-    Button CB,NavCB,LS;
+    Button CB,NavCB,LS,FAQ,Zones;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        FAQ=findViewById(R.id.button16);
+        Zones=findViewById(R.id.button15);
         CB=findViewById(R.id.button6);
         NavCB=findViewById(R.id.button8);
         LS=findViewById(R.id.button3);
@@ -37,6 +39,22 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(HomeActivity.this,SymptomLogger.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+        Zones.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomeActivity.this,ZonesActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+        FAQ.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomeActivity.this,FAQActivity.class);
                 startActivity(intent);
                 finish();
             }

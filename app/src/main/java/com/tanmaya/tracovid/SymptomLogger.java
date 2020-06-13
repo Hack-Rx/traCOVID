@@ -3,6 +3,7 @@ package com.tanmaya.tracovid;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Adapter;
@@ -29,7 +30,7 @@ public class SymptomLogger extends AppCompatActivity implements AdapterView.OnIt
     FirebaseDatabase database;
     DatabaseReference ref;
     private EditText patientName,symptomname;
-    Button submit;
+    Button submit,NavHome,NavCB;
     SeekBar seek_bar;
     TextView tv1;
     Spinner mySpinner,Spinner2;
@@ -44,6 +45,8 @@ public class SymptomLogger extends AppCompatActivity implements AdapterView.OnIt
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_symptom_logger);
         submit=findViewById(R.id.submit);
+        NavHome=findViewById(R.id.button7);
+        NavCB=findViewById(R.id.button8);
         patientName=findViewById(R.id.pat_name);
         symptomname=findViewById(R.id.sym_name);
         symptom = new Symptom();
@@ -65,6 +68,22 @@ public class SymptomLogger extends AppCompatActivity implements AdapterView.OnIt
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
+            }
+        });
+        NavCB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SymptomLogger.this,ChatBotActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+        NavHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SymptomLogger.this,HomeActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
 

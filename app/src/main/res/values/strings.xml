@@ -1,11 +1,11 @@
 <resources>
     <string name="app_name">traCOVID</string>
     <string-array name="temps">
-    <item>98°F</item>
-    <item>99°F</item>
-    <item>100°F</item>
-    <item>101°F</item>
-    <item>102°F</item>
+        <item>98°F</item>
+        <item>99°F</item>
+        <item>100°F</item>
+        <item>101°F</item>
+        <item>102°F</item>
         <item>>102°F</item>
     </string-array>
     <string-array name="Ability">
