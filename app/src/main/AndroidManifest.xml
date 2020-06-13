@@ -3,9 +3,12 @@
     package="com.tanmaya.tracovid">
 
     <uses-permission android:name="android.permission.INTERNET" />
+
     <uses-feature android:name="android.hardware.audio.low_latency" />
     <uses-feature android:name="android.hardware.audio.pro" />
-    <uses-feature android:name="android.hardware.microphone" android:required="true"/>
+    <uses-feature
+        android:name="android.hardware.microphone"
+        android:required="true" />
 
     <application
         android:allowBackup="true"
@@ -14,7 +17,8 @@
         android:roundIcon="@mipmap/applogo_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ChatBotActivity"></activity>
+        <activity android:name=".SymptomLogger"></activity>
+        <activity android:name=".ChatBotActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".HomeActivity" />
         <activity android:name=".SplashScreen">

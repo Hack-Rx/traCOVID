@@ -1,3 +1,24 @@
 <resources>
     <string name="app_name">traCOVID</string>
+    <string-array name="temps">
+    <item>98°F</item>
+    <item>99°F</item>
+    <item>100°F</item>
+    <item>101°F</item>
+    <item>102°F</item>
+        <item>>102°F</item>
+    </string-array>
+    <string-array name="Ability">
+        <item>Yes</item>
+        <item>No</item>
+    </string-array>
+    <string-array name="disease">
+        <item>Not applicable</item>
+        <item>Fever</item>
+        <item>Cough</item>
+        <item>Body-Ache</item>
+        <item>Stomach-Ache</item>
+        <item>Headache</item>
+        <item>Other Option</item>
+    </string-array>
 </resources>
