@@ -1,5 +1,6 @@
 package com.tanmaya.tracovid;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -14,70 +15,97 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.lang.reflect.Member;
+
 import static android.R.layout.simple_list_item_1;
 
 public class SymptomLogger extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
-    private EditText doctorID;
-    private EditText patientName;
+    FirebaseDatabase database;
+    DatabaseReference ref;
+    private EditText patientName,symptomname;
     Button submit;
     SeekBar seek_bar;
     TextView tv1;
-    Spinner mySpinner,Spinner2,Spinner3;
+    Spinner mySpinner,Spinner2;
     ArrayAdapter<String> myAdapter,Adapter2,Adapter3;
-    int hapLevel=0;
-    String record;
-    String getDocID;
-    String getPatName;
+    String hapLevel;
+    String record,breathe;
+    String getPatName,getSymptomName;
+    int maxid = 0;
+    Symptom symptom;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_symptom_logger);
-        submit=(Button)findViewById(R.id.submit);
+        submit=findViewById(R.id.submit);
         patientName=findViewById(R.id.pat_name);
+        symptomname=findViewById(R.id.sym_name);
+        symptom = new Symptom();
+        ref = database.getInstance().getReference().child("Symptom");
+
+        ref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()) {
+                    maxid = (int) dataSnapshot.getChildrenCount();
+
+                }
+                else
+                {
+                    ///
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
 
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 getPatName=patientName.getText().toString();
-                TextView patName=(TextView)findViewById(R.id.disp_pat_name);
-                TextView happiness=(TextView)findViewById(R.id.happiness);
-                TextView temp=(TextView)findViewById(R.id.temp);
-                happiness.setText("Wellness Level: "+hapLevel+"%");
-                temp.setText("Temperature: "+record);
-                patName.setText("Patient Name: "+getPatName);
+                getSymptomName=symptomname.getText().toString();
+                symptom.setName(getPatName);
+                symptom.setSymptoms(getSymptomName);
+                symptom.setWelness(hapLevel);
+                symptom.setTemp(record);
+                symptom.setba(breathe);
+                ref.child(String.valueOf(maxid+1)).setValue(symptom);
             }
         });
 
 
         seekBar();
-        mySpinner=(Spinner)findViewById(R.id.spinner1);
+        mySpinner=findViewById(R.id.spinner1);
 
         myAdapter= new ArrayAdapter<String>(SymptomLogger.this, simple_list_item_1,getResources().getStringArray(R.array.temps));
 
         myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         mySpinner.setAdapter(myAdapter);
+        mySpinner.setOnItemSelectedListener(this);
+        record=mySpinner.getSelectedItem().toString();
 
-
-        Spinner2=(Spinner)findViewById(R.id.spinner2);
+        Spinner2=findViewById(R.id.spinner2);
 
         Adapter2= new ArrayAdapter<String>(SymptomLogger.this, simple_list_item_1,getResources().getStringArray(R.array.Ability));
 
         Adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         Spinner2.setAdapter(Adapter2);
-        //Spinner2.setOnItemSelectedListener(this);
+        breathe=Spinner2.getSelectedItem().toString();
 
-        //Spinner3=(Spinner)findViewById(R.id.spinner3);
 
-        //Adapter3= new ArrayAdapter<String>(SymptomLogger.this, simple_list_item_1,getResources().getStringArray(R.array.disease));
-
-        //Adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        //Spinner3.setAdapter(Adapter3);
-
-        //Spinner3.setOnItemSelectedListener(this);
     }
     public void seekBar(){
-        seek_bar = (SeekBar)findViewById(R.id.seekBar);
-        tv1=(TextView)findViewById(R.id.textView1);
+        seek_bar = findViewById(R.id.seekBar);
+        tv1=findViewById(R.id.textView1);
 
 
         seek_bar.setOnSeekBarChangeListener(
@@ -86,7 +114,7 @@ public class SymptomLogger extends AppCompatActivity implements AdapterView.OnIt
                     @Override
                     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                         progress_value=progress;
-                        hapLevel=progress;
+                        hapLevel=hapLevel.valueOf(progress);
                         tv1.setText("Happiness : "+progress+"%");
                         Toast.makeText(SymptomLogger.this,"SeekBar in progress",Toast.LENGTH_LONG);
                     }
@@ -107,17 +135,15 @@ public class SymptomLogger extends AppCompatActivity implements AdapterView.OnIt
 
     }
 
-    public void pressed(View view) {
-        TextView happiness=(TextView)findViewById(R.id.happiness);
-        TextView temp=(TextView)findViewById(R.id.temp);
-        happiness.setText("Wellness Level: "+hapLevel+"%");
-        temp.setText("Temperature: "+record);
-    }
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        record=parent.getItemAtPosition(position).toString();
+        //record=parent.getItemAtPosition(position).toString();
     }
+
+   // public void onItemSelected1(AdapterView<?> parent, View view, int position, long id) {
+     //   breathe=parent.getItemAtPosition(position).toString();
+    //}
 
     @Override
     public void onNothingSelected(AdapterView<?> parent) {

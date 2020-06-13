@@ -133,6 +133,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/et_symptom"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="18dp"
@@ -163,33 +164,6 @@
             android:padding="10dp"
             android:text="SUBMIT"
             android:textColor="#FFF" />
-
-        <TextView
-            android:id="@+id/disp_pat_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:fontFamily="@font/montserrat"
-            android:text="Patient Name: "
-            android:textSize="14dp" />
-
-        <TextView
-            android:id="@+id/happiness"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:fontFamily="@font/montserrat"
-            android:text="Happiness Level: "
-            android:textSize="14dp" />
-
-        <TextView
-            android:id="@+id/temp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:fontFamily="@font/montserrat"
-            android:text="Temperature: "
-            android:textSize="14dp" />
 
 
     </LinearLayout>
